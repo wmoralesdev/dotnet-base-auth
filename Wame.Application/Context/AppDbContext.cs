@@ -1,12 +1,26 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using Wame.Domain.Entities.BaseIdentities;
+using Wame.Domain.Entities.Campaigns;
+using Wame.Domain.Entities.Companies;
+using Wame.Domain.Entities.Jobs;
 using Wame.Domain.Entities.Users;
 
 namespace Wame.Application.Context;
 
 public class AppDbContext : DbContext
 {
-    public DbSet<User> Users => Set<User>();
+    public DbSet<BaseIdentity> BaseIdentities => Set<BaseIdentity>();
+
+    public DbSet<Candidate> Candidates => Set<Candidate>();
+
+    public DbSet<Recruiter> Recruiters => Set<Recruiter>();
+
+    public DbSet<Company> Companies => Set<Company>();
+
+    public DbSet<Job> Jobs => Set<Job>();
+
+    public DbSet<Campaign> Campaigns => Set<Campaign>();
 
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 

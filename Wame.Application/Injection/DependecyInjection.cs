@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Wame.Application.Abstract;
+using Wame.Application.Abstract.Tokens;
 using Wame.Application.Abstract.Users;
 using Wame.Application.Implementation.Tokens;
 using Wame.Application.Implementation.Users;
@@ -12,7 +13,7 @@ public static class DependecyInjection
     {
         services.AddTransient<ITokenService, TokenService>();
         
-        services.AddTransient<IUserRepository, UserRepository>();
+        services.AddTransient<IBaseIdentityRepository, BaseIdentityRepository>();
         services.AddTransient<IUserService, UserService>();
 
         return services;
