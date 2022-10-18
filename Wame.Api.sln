@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wame.Api", "Wame.Api\Wame.Api.csproj", "{F83DDCEA-3495-4046-AE50-FAB2AD6CB531}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wame.Domain", "Wame.Domain\Wame.Domain.csproj", "{68505472-4928-45D0-9242-E12F4848DAD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wame.Application", "Wame.Application\Wame.Application.csproj", "{CC143A1E-6E4B-4C7F-83E8-8E34F7246EB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F83DDCEA-3495-4046-AE50-FAB2AD6CB531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83DDCEA-3495-4046-AE50-FAB2AD6CB531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83DDCEA-3495-4046-AE50-FAB2AD6CB531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83DDCEA-3495-4046-AE50-FAB2AD6CB531}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68505472-4928-45D0-9242-E12F4848DAD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68505472-4928-45D0-9242-E12F4848DAD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68505472-4928-45D0-9242-E12F4848DAD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68505472-4928-45D0-9242-E12F4848DAD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC143A1E-6E4B-4C7F-83E8-8E34F7246EB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC143A1E-6E4B-4C7F-83E8-8E34F7246EB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC143A1E-6E4B-4C7F-83E8-8E34F7246EB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC143A1E-6E4B-4C7F-83E8-8E34F7246EB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
