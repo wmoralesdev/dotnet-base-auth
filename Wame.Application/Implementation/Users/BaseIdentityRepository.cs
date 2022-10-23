@@ -20,6 +20,14 @@ public class BaseIdentityRepository : IBaseIdentityRepository
         return await _ctx.Candidates.Where(u => u.Email != null && u.Email.Equals(email)).FirstOrDefaultAsync();
     }
 
+    public async Task<Recruiter> CreateRecruiter(Recruiter recruiter)
+    {
+        var stored = _ctx.Recruiters.Add(recruiter).Entity;
+        await _ctx.SaveChangesAsync();
+
+        return stored;
+    }
+
     public async Task<Candidate?> CreateCandidate(Candidate candidate)
     {
         var stored = _ctx.Candidates.Add(candidate);

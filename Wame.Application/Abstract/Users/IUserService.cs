@@ -7,4 +7,6 @@ namespace Wame.Application.Abstract.Users;
 public interface IUserService
 {
     Task<TokenVm> Login(LoginVm loginVm);
+
+    Task<RecruiterVm> RegisterRecruiter(RegisterRecruiterVm registerRecruiterVm);
 }
