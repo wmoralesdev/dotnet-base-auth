@@ -2,7 +2,6 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Wame.Domain.Entities.BaseIdentities;
 using Wame.Domain.Entities.Campaigns;
-using Wame.Domain.Entities.Companies;
 using Wame.Domain.Entities.Jobs;
 using Wame.Domain.Entities.Users;
 
@@ -16,8 +15,6 @@ public class AppDbContext : DbContext
 
     public DbSet<Recruiter> Recruiters => Set<Recruiter>();
 
-    public DbSet<Company> Companies => Set<Company>();
-
     public DbSet<Job> Jobs => Set<Job>();
 
     public DbSet<Campaign> Campaigns => Set<Campaign>();
@@ -26,6 +23,7 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        builder.HasPostgresExtension("uuid-ossp");
         builder.ApplyConfigurationsFromAssembly(Assembly.Load("Wame.Domain"));
 
         base.OnModelCreating(builder);

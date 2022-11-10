@@ -22,4 +22,8 @@ public class Campaign
     public Job? Position { get; set; }
     
     public bool IsActive { get; set; }
+    
+    public Candidate? Hired { get; set; }
+    
+    public Guid? InvitationId { get; set; }
 }

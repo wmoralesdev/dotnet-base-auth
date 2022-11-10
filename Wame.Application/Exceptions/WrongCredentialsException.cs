@@ -1,8 +1,8 @@
 namespace Wame.Application.Exceptions;
 
-public class WrongCredentialsException : Exception
+public class WrongCredentialsException : HttpException
 {
-    public WrongCredentialsException() : base("Wrong credentials")
+    public WrongCredentialsException() : base("Wrong credentials", 401)
     {
     }
 }

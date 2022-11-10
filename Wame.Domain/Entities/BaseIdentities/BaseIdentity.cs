@@ -4,8 +4,6 @@ namespace Wame.Domain.Entities.BaseIdentities;
 
 public class BaseIdentity
 {
-    public Guid Id { get; set; }
-    
     public string? Email { get; set; }
     
     public string? Password { get; set; }

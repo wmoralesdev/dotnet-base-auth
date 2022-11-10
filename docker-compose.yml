@@ -8,13 +8,3 @@ services:
       POSTGRES_PASSWORD: root
     ports:
       - "5432:5432"
-  api:
-    container_name: wame-api
-    build: .
-    depends_on: 
-      - db
-    environment:
-      ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_URLS: http://localhost:7575
-    ports:
-      - "7575:7575"

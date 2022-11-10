@@ -3,14 +3,12 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using Wame.Application.Abstract;
-using Wame.Application.Abstract.Tokens;
 using Wame.Domain.Entities.BaseIdentities;
 using Wame.Domain.Entities.Users;
 
 namespace Wame.Application.Implementation.Tokens;
 
-public class TokenService : ITokenService
+public class TokenService
 {
     private readonly IConfiguration _config;
 
@@ -19,7 +17,7 @@ public class TokenService : ITokenService
         _config = config;
     }
 
-    public string GenerateToken(BaseIdentity candidate)
+    public string GenerateToken(Recruiter recruiter)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.ASCII.GetBytes(_config["Jwt:Key"]);
@@ -28,8 +26,9 @@ public class TokenService : ITokenService
         {
             Subject = new ClaimsIdentity(new[]
             {
-                new Claim("Email", candidate.Email!),
+                new Claim("Email", recruiter.Email!),
             }),
+            Issuer = _config["Jwt:Issuer"],
             Expires = DateTime.UtcNow.AddDays(7),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), 
                 SecurityAlgorithms.HmacSha256)

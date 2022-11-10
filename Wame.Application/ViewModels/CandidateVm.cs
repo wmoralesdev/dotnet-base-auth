@@ -1,12 +1,7 @@
-using Wame.Domain.Entities.BaseIdentities;
-using Wame.Domain.Entities.Campaigns;
+namespace Wame.Application.ViewModels;
 
-namespace Wame.Domain.Entities.Users;
-
-public class Candidate : BaseIdentity
+public class CandidateVm : BaseIdentityVm
 {
-    public IList<Campaign>? Campaigns { get; set; }
-    
     public int Age { get; set; }
     
     public string? Phone { get; set; }
