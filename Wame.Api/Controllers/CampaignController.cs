@@ -28,10 +28,29 @@ public class CampaignController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IList<CampaignVm>>> Get()
+    public async Task<ActionResult<IList<ResumedCampaignVm>>> Get()
     {
         var email = User.Claims.GetEmailFromClaims();
 
         return Ok(await _campaignService.GetCampaigns(email));
+    }
+
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<CampaignVm>> GetById(int id)
+    {
+        return Ok(await _campaignService.GetById(id));
+    }
+
+    [AllowAnonymous]
+    [HttpGet("invite/{invitationId:guid}")]
+    public async Task<ActionResult<CampaignVm>> GetByInvitationId(Guid invitationId)
+    {
+        return Ok(await _campaignService.GetByInvitationId(invitationId));
+    }
+
+    [HttpPatch("disable/{id:int}")]
+    public async Task<ActionResult<CampaignVm>> Disable(int id)
+    {
+        return Ok(await _campaignService.DisableCampaign(id));
     }
 }

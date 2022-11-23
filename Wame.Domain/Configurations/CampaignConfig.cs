@@ -10,8 +10,6 @@ public class CampaignConfig : IEntityTypeConfiguration<Campaign>
     {
         builder.HasMany(c => c.Candidates);
         builder.Property(c => c.InvitationId)
-            .HasColumnType("uuid")
-            .HasDefaultValueSql("uuid_generate_v4()")
             .ValueGeneratedOnAdd();
     }
 }

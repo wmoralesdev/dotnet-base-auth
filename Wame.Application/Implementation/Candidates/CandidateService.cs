@@ -19,13 +19,13 @@ public class CandidateService
         _campaignRepo = campaignRepo;
     }
 
-    public async Task<CandidateVm> CreateCandidate(Guid invitationId, CandidateVm vm)
+    public async Task<CandidateVm> CreateCandidate(Guid invitationId, FilledInviteVm vm)
     {
         var campaign = await _campaignRepo.FindByInvitationId(invitationId);
 
         if (campaign is null) throw new NotFoundException("Campaign not found");
         
-        var candidate = await _candidateRepo.Create(_mapper.Map<Candidate>(vm));
+        var candidate = await _candidateRepo.Create(_mapper.Map<Candidate>(vm), campaign);
         
         return _mapper.Map<CandidateVm>(candidate);
     }

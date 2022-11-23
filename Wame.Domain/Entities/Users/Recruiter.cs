@@ -5,5 +5,4 @@ namespace Wame.Domain.Entities.Users;
 
 public class Recruiter : BaseIdentity
 {
-    public IList<Campaign>? Campaigns { get; set; }
 }

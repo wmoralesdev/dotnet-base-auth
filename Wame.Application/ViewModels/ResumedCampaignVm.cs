@@ -17,4 +17,6 @@ public class ResumedCampaignVm
     public bool IsActive { get; set; }
 
     public Guid? InvitationId { get; set; }
+    
+    public int Candidates { get; set; }
 }

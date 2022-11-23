@@ -5,7 +5,7 @@ namespace Wame.Domain.Entities.Users;
 
 public class Candidate : BaseIdentity
 {
-    public IList<Campaign>? Campaigns { get; set; }
+    public Campaign Campaign { get; set; }
     
     public int Age { get; set; }
     
@@ -16,4 +16,6 @@ public class Candidate : BaseIdentity
     public string? Formation { get; set; }
     
     public string? Aptitudes { get; set; }
+    
+    public DateTime? CreatedAt { get; set; }
 }

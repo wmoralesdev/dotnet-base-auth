@@ -2,6 +2,8 @@ using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using Wame.Application.Implementation.Auth;
 using Wame.Application.Implementation.Campaigns;
+using Wame.Application.Implementation.Candidates;
+using Wame.Application.Implementation.Interviews;
 using Wame.Application.Implementation.Recruiters;
 using Wame.Application.Implementation.Tokens;
 
@@ -25,6 +27,10 @@ public static class DependecyInjection
         services.AddTransient<CampaignService>();
         services.AddTransient<RecruiterRepository>();
         services.AddTransient<CampaignRepository>();
+        services.AddTransient<CandidateService>();
+        services.AddTransient<CandidateRepository>();
+        services.AddTransient<InterviewService>();
+        services.AddTransient<InterviewRepository>();
 
         return services;
     }

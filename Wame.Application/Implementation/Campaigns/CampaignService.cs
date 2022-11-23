@@ -30,8 +30,23 @@ public class CampaignService
         return _mapper.Map<CampaignVm>(campaign);
     }
 
-    public async Task<IList<CampaignVm>> GetCampaigns(string email)
+    public async Task<IList<ResumedCampaignVm>> GetCampaigns(string email)
     {
-        return _mapper.Map<IList<CampaignVm>>(await _campaignRepo.GetCampaigns(email));
+        return _mapper.Map<IList<ResumedCampaignVm>>(await _campaignRepo.GetCampaigns(email));
+    }
+
+    public async Task<CampaignVm> GetById(int id)
+    {
+        return _mapper.Map<CampaignVm>(await _campaignRepo.GetById(id));
+    }
+
+    public async Task<CampaignVm> GetByInvitationId(Guid invitationId)
+    {
+        return _mapper.Map<CampaignVm>(await _campaignRepo.GetByInvitationId(invitationId));
+    }
+
+    public async Task<CampaignVm> DisableCampaign(int id)
+    {
+        return _mapper.Map<CampaignVm>(await _campaignRepo.DisableCampaign(id));
     }
 }

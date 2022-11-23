@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: corsPolicy,
         corsPolicyBuilder =>
         {
-            corsPolicyBuilder.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod();
+            corsPolicyBuilder.WithOrigins("http://localhost:5173", "https://wame-ui.vercel.app").AllowAnyHeader().AllowAnyMethod();
         }
     );
 });
@@ -57,14 +57,10 @@ builder.Services.AddDb(builder.Configuration);
 builder.Services.AddJwtAuthentication(builder.Configuration);
 
 var app = builder.Build();
-AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 

@@ -10,5 +10,11 @@ public class CampaignMappings : Profile
     {
         CreateMap<Campaign, CampaignVm>();
         CreateMap<NewCampaignVm, Campaign>();
+        CreateMap<Campaign, ResumedCampaignVm>()
+            .ForMember(d => d.Candidates,
+                opt => opt.MapFrom(
+                    e => e.Candidates.Count 
+                )
+            );
     }
 }
